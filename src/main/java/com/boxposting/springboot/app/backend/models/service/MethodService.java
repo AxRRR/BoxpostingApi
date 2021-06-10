@@ -16,5 +16,7 @@ public interface MethodService {
 	
 	public List<Noticias> findNoticiasPorVistasAsc();
 	
+	public Noticias saveNoticia(Noticias noticias);
+	
 	public Noticias findByIdNoticia(Long id);
 }

@@ -36,7 +36,7 @@ public class NoticiasServices implements MethodService {
 
 	@Override
 	public List<Noticias> findNoticiasOrdenadasAsc() {
-		return in.findByOrderByFechaAsc();
+		return in.findByOrderByFechaDesc();
 	}
 
 	@Override
@@ -46,7 +46,12 @@ public class NoticiasServices implements MethodService {
 
 	@Override
 	public Noticias findByIdNoticia(Long id) {
-		return em.find(Noticias.class, id);
+		return in.findByIdLike(id);
+	}
+
+	@Override
+	public Noticias saveNoticia(Noticias noticias) {
+		return in.save(noticias);
 	}
 
 }

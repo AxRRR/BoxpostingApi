@@ -4,14 +4,17 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Noticias {
 
-	@Id
-	private Long id_noticia;
+	@Column(name = "id_noticia")
+	private Long id;
 
+	@Id
 	private String titulo_noticia;
 
 	private String texto_noticia;
@@ -27,12 +30,12 @@ public class Noticias {
 	@Column(name = "genero_id")
 	private Long genero;
 
-	public Long getId_noticia() {
-		return id_noticia;
+	public Long getId() {
+		return id;
 	}
 
-	public void setId_noticia(Long id_noticia) {
-		this.id_noticia = id_noticia;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTitulo_noticia() {

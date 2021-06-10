@@ -11,4 +11,8 @@ public interface INoticias extends CrudRepository<Noticias, Long>{
 	public List<Noticias> findByGeneroLike(Long genero);
 	
 	public List<Noticias> findTop3ByOrderByFechaAsc();
+	
+	public List<Noticias> findByOrderByFechaAsc();
+	
+	public List<Noticias> findByOrderByVistasDesc();
 }

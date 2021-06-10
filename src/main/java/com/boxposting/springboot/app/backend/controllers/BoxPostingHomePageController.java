@@ -20,6 +20,11 @@ public class BoxPostingHomePageController {
 	@Autowired
 	private MethodService method;
 	
+	@GetMapping("/buscarnoticia/{id}")
+	public Noticias RecibirNoticiaId(@PathVariable Long id) {
+		return method.findByIdNoticia(id);
+	}
+	
 	@GetMapping("/buscarnoticias")
 	public List<Noticias> RecibirNoticiasTecnlogias() {
 		return method.findAllTecnologia();
@@ -33,5 +38,15 @@ public class BoxPostingHomePageController {
 	@GetMapping("/top3noticias")
 	public List<Noticias> RecibirTop3Noticias(){
 		return method.findTop3Noticias();
+	}
+	
+	@GetMapping("/ultimasnoticiasordenada")
+	public List<Noticias> RecibirNoticiasOrdenadas(){
+		return method.findNoticiasOrdenadasAsc();
+	}
+	
+	@GetMapping("/ultimasnoticiasordenadaporvistas")
+	public List<Noticias> RecibirNoticiasOrdenadasPorVistas(){
+		return method.findNoticiasPorVistasAsc();
 	}
 }

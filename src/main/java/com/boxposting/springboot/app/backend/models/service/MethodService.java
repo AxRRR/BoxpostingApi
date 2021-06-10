@@ -12,4 +12,9 @@ public interface MethodService {
 	
 	public List<Noticias> findTop3Noticias();
 	
+	public List<Noticias> findNoticiasOrdenadasAsc();
+	
+	public List<Noticias> findNoticiasPorVistasAsc();
+	
+	public Noticias findByIdNoticia(Long id);
 }

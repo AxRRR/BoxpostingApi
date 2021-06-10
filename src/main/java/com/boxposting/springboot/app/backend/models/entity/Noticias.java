@@ -21,7 +21,8 @@ public class Noticias {
 	@Column(name = "fecha_noticia")
 	private Date fecha;
 
-	private Long vistas_noticia;
+	@Column(name = "vistas_noticia")
+	private Long vistas;
 
 	@Column(name = "genero_id")
 	private Long genero;
@@ -66,12 +67,12 @@ public class Noticias {
 		this.fecha = fecha;
 	}
 
-	public Long getVistas_noticia() {
-		return vistas_noticia;
+	public Long getVistas() {
+		return vistas;
 	}
 
-	public void setVistas_noticia(Long vistas_noticias) {
-		this.vistas_noticia = vistas_noticias;
+	public void setVistas(Long vistas) {
+		this.vistas = vistas;
 	}
 
 	public Long getGenero() {

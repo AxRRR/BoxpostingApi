@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.boxposting.springboot.app.backend.models.entity.Tecnologia;
+
+import com.boxposting.springboot.app.backend.models.entity.Noticias;
 import com.boxposting.springboot.app.backend.models.service.MethodService;
 
 @CrossOrigin(origins = {"http://localhost:3000"} )
@@ -19,13 +20,18 @@ public class BoxPostingHomePageController {
 	@Autowired
 	private MethodService method;
 	
-	@GetMapping("/tecnologias")
-	public List<Tecnologia> RecibirNoticiasTecnlogias() {
+	@GetMapping("/buscarnoticias")
+	public List<Noticias> RecibirNoticiasTecnlogias() {
 		return method.findAllTecnologia();
 	}
 	
-	@GetMapping("/tecnologias2/{genero}")
-	public List<Tecnologia> RecibirAllNoticiasTecnologicas(@PathVariable Long genero){
+	@GetMapping("/buscarnoticiasporgenero/{genero}")
+	public List<Noticias> RecibirAllNoticiasTecnologicas(@PathVariable Long genero){
 		return method.findByGeneroId(genero);
+	}
+	
+	@GetMapping("/top3noticias")
+	public List<Noticias> RecibirTop3Noticias(){
+		return method.findTop3Noticias();
 	}
 }

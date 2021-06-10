@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Tecnologia {
+public class Noticias {
 
 	@Id
 	private Long id_noticia;
@@ -18,7 +18,8 @@ public class Tecnologia {
 
 	private String imagen_noticia;
 
-	private Date fecha_noticia;
+	@Column(name = "fecha_noticia")
+	private Date fecha;
 
 	private Long vistas_noticia;
 
@@ -57,12 +58,12 @@ public class Tecnologia {
 		this.imagen_noticia = imagen_noticia;
 	}
 
-	public Date getFecha_noticia() {
-		return fecha_noticia;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setFecha_noticia(Date fecha_noticia) {
-		this.fecha_noticia = fecha_noticia;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	public Long getVistas_noticia() {
